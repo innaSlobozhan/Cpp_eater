@@ -24,7 +24,7 @@ namespace ConsoleBot
             }
         });
         static InlineKeyboardMarkup inlineKeyboardOK = new InlineKeyboardMarkup(new InlineKeyboardButton() { Text = "Почати тестування", CallbackData = "OK"});
-        static InlineKeyboardMarkup urlButton = new InlineKeyboardMarkup(new InlineKeyboardButton() { Text = "Проект на  Github", Url = "https://www.youtube.com/watch?v=x_UfBJF47nk", CallbackData = "URL"}); 
+        static InlineKeyboardMarkup urlButton = new InlineKeyboardMarkup(new InlineKeyboardButton() { Text = "Проект на  Github", Url = "https://github.com/innaSlobozhan/Cpp_eater", CallbackData = "URL"}); 
 
         static List<User> users = new List<User>();
         
