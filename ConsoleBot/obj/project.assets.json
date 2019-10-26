@@ -3688,21 +3688,17 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vital\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\vital\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vital\\Desktop\\ConsoleBot\\ConsoleBot\\ConsoleBot.csproj",
+      "projectUniqueName": "C:\\Users\\vital\\Source\\Repos\\innaSlobozhan\\Cpp_eater\\ConsoleBot\\ConsoleBot.csproj",
       "projectName": "ConsoleBot",
-      "projectPath": "C:\\Users\\vital\\Desktop\\ConsoleBot\\ConsoleBot\\ConsoleBot.csproj",
+      "projectPath": "C:\\Users\\vital\\Source\\Repos\\innaSlobozhan\\Cpp_eater\\ConsoleBot\\ConsoleBot.csproj",
       "packagesPath": "C:\\Users\\vital\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vital\\Desktop\\ConsoleBot\\ConsoleBot\\obj\\",
+      "outputPath": "C:\\Users\\vital\\Source\\Repos\\innaSlobozhan\\Cpp_eater\\ConsoleBot\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\vital\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -3729,6 +3725,7 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
@@ -3739,10 +3736,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

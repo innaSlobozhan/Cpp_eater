@@ -82,14 +82,17 @@ namespace ConsoleBot
             
             if(e.CallbackQuery.Data == "OK")
             {
+                Client.AnswerCallbackQueryAsync(e.CallbackQuery.Id);
                 currentUser.Manager.Examination.ShowTest(Client, currentUser.ChatID, inlineKeyboardAnswers);
+
             }
             else if(e.CallbackQuery.Data == "URL")
             {
-
+                Client.AnswerCallbackQueryAsync(e.CallbackQuery.Id);
             }
             else
             {
+                Client.AnswerCallbackQueryAsync(e.CallbackQuery.Id);
                 currentUser.Manager.Examination.TakeAnswer(Client, currentUser, inlineKeyboardAnswers, Convert.ToInt32(e.CallbackQuery.Data));
             }
         }
