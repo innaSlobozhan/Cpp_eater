@@ -65,7 +65,7 @@ namespace ConsoleBot
                 }
                 Client.SendTextMessageAsync(currentUser.ChatID, @string);
             }
-            else if (e.Message.Text == "/debuglevel")
+            else if (e.Message.Text == "/reset")
             {
                 currentUser.Level = 0;
                 Client.SendTextMessageAsync(currentUser.ChatID, "Повернення до початкового рівня.");
