@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<RootTest>
+  <Test id="0">
+     <Question >*Вопрос*</Question>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+  </Test>
+  <Test id="1">
+    <Question >*Вопрос*</Question>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+  </Test>
+  <Test id="2">
+    <Question >*Вопрос*</Question>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+  </Test>
+  <Test id="3">
+    <Question >*Вопрос*</Question>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+  </Test>
+  <Test id="4">
+    <Question >*Вопрос*</Question>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+      <Answer answer ="false">*Ответ*</Answer>
+  </Test>
+</RootTest>
