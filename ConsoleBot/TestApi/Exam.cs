@@ -37,7 +37,7 @@ namespace ConsoleBot.TestApi
                 testPos++;
                 if(testPos > tests.Count - 1)
                 {
-                    if (answerCount >= tests.Count - 1)
+                    if ((((double)answerCount / tests.Count) * 100) >= 60)
                     {
 
                         bot.SendTextMessageAsync(currentUser.ChatID, $"Ви успішно пройшли тест!\nВи відповіли на {answerCount} питань з {tests.Count}.", replyMarkup: new ReplyKeyboardRemove());
@@ -49,7 +49,7 @@ namespace ConsoleBot.TestApi
 
                         XMLmanager.UpdateLevel(currentUser);
                     }
-                    else if (answerCount < tests.Count - 1)
+                    else if ((((double)answerCount / tests.Count) * 100) < 60)
                     {
                         bot.SendTextMessageAsync(currentUser.ChatID, $"Ви не пройшли тест! Визвіть команду /study\nВи відповіли на {answerCount} питань з {tests.Count}.", replyMarkup: new ReplyKeyboardRemove());
                         answerCount = 0;

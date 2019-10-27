@@ -44,7 +44,7 @@ namespace ConsoleBot
             xLevel.AppendChild(userLevel);
             userElement.AppendChild(xLevel);
             xRoot.AppendChild(userElement);
-            xDoc.Save("Users.xml");
+            xDoc.Save("Users\\Users.xml");
         }
         static public void UpdateLevel(User user)
         {

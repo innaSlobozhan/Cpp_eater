@@ -26,12 +26,14 @@ namespace ConsoleBot.TestApi
         public string ShowTest()
         {
             string strQuest = "";
+            int i = 1;
 
             strQuest += $"Питання: {TestName}\n";
 
             foreach (Question item in questions)
             {
-                strQuest += $"{item.question} - {item.answer}\n";
+                strQuest += $"{i}.{item.question} - {item.answer}\n";
+                i++;
             }
 
             return strQuest;

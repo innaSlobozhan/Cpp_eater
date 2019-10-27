@@ -52,8 +52,8 @@ namespace ConsoleBot
             switch (e.Message.Text)
             {
                 case "/start":
-                    Client.SendTextMessageAsync(currentUser.ChatID, "Для виклику лекцій використовуйте команду /study. Уважно прочитайте її вміст і приступайте до тестів, в випадку успішного проходження (мінімум 4 тести з 5) Ви отримуєте доступ до наступної лекції.");
                     ExtensionList.Add(users, new User(e.Message.Chat.Id));
+                    Client.SendTextMessageAsync(e.Message.Chat.Id, "Для виклику лекцій використовуйте команду /study. Уважно прочитайте її вміст і приступайте до тестів, в випадку успішного проходження (мінімум 60% вірних відповідей) Ви отримуєте доступ до наступної лекції.");
                     break;
                 case "/study":
                     Client.SendTextMessageAsync(currentUser.ChatID, Lectures[currentUser.Level], replyMarkup: inlineKeyboardOK);
@@ -92,6 +92,7 @@ namespace ConsoleBot
             if(e.CallbackQuery.Data == "OK")
             {
                 Client.AnswerCallbackQueryAsync(e.CallbackQuery.Id);
+                Client.SendTextMessageAsync(currentUser.ChatID, $"Ви розпочинаете тест на тему {currentUser.Level + 1}-ої лекції");
                 currentUser.Manager.Examination.ShowTest(Client, currentUser.ChatID, replyKeyboard);
 
             }
