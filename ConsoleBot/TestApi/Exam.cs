@@ -17,7 +17,7 @@ namespace ConsoleBot.TestApi
         }
 
 
-        public void ShowTest(TelegramBotClient bot, long ChatId, InlineKeyboardMarkup keyboard)
+        public void ShowTest(TelegramBotClient bot, long ChatId, ReplyKeyboardMarkup keyboard)
         {
             try
             {
@@ -28,36 +28,36 @@ namespace ConsoleBot.TestApi
 
             }
         }
-        public void TakeAnswer(TelegramBotClient bot, User currentUser, InlineKeyboardMarkup keyboard, int answer)
+        public void TakeAnswer(TelegramBotClient bot, User currentUser, ReplyKeyboardMarkup keyboard, int answer)
         {
             if(testPos <= tests.Count - 1)
             {
                 if (tests[testPos].GetAnswer()[answer - 1])
                     answerCount++;
                 testPos++;
-                ShowTest(bot, currentUser.ChatID, keyboard);
-            }
-            else
-            {
-                if(answerCount >= tests.Count - 1)
+                if(testPos > tests.Count - 1)
                 {
+                    if (answerCount >= tests.Count - 1)
+                    {
 
-                    bot.SendTextMessageAsync(currentUser.ChatID, $"Ви успішно пройшли тест!\nВи відповіли на {answerCount} питань з {tests.Count}.");
-                    answerCount = 0;
-                    testPos = 0;
+                        bot.SendTextMessageAsync(currentUser.ChatID, $"Ви успішно пройшли тест!\nВи відповіли на {answerCount} питань з {tests.Count}.", replyMarkup: new ReplyKeyboardRemove());
+                        answerCount = 0;
+                        testPos = 0;
 
-                    if (currentUser.Level < 10)
-                        currentUser.LevelUp();
+                        if (currentUser.Level < 10)
+                            currentUser.LevelUp();
 
-                    XMLmanager.UpdateLevel(currentUser);
+                        XMLmanager.UpdateLevel(currentUser);
+                    }
+                    else if (answerCount < tests.Count - 1)
+                    {
+                        bot.SendTextMessageAsync(currentUser.ChatID, $"Ви не пройшли тест! Визвіть команду /study\nВи відповіли на {answerCount} питань з {tests.Count}.", replyMarkup: new ReplyKeyboardRemove());
+                        answerCount = 0;
+                        testPos = 0;
+                    }
                 }
-                else if(answerCount < tests.Count - 1)
-                {
-                    bot.SendTextMessageAsync(currentUser.ChatID, $"Ви не пройшли тест! Визвіть команду /study\nВи відповіли на {answerCount} питань з {tests.Count}.");
-                    answerCount = 0;
-                    testPos = 0;
-                }
-                    
+                else
+                    ShowTest(bot, currentUser.ChatID, keyboard);
             }
         }
     }
