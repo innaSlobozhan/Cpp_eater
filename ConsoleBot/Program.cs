@@ -18,7 +18,7 @@ namespace ConsoleBot
         {
             new KeyboardButton[]
             {
-                new KeyboardButton(){Text = "1"},
+                new KeyboardButton(){Text = "1⃣"},
                 new KeyboardButton(){Text = "2"}
             },
             new KeyboardButton[]
@@ -53,13 +53,20 @@ namespace ConsoleBot
             {
                 case "/start":
                     ExtensionList.Add(users, new User(e.Message.Chat.Id));
-                    Client.SendTextMessageAsync(e.Message.Chat.Id, "Для виклику лекцій використовуйте команду /study. Уважно прочитайте її вміст і приступайте до тестів, в випадку успішного проходження (мінімум 60% вірних відповідей) Ви отримуєте доступ до наступної лекції.");
+                    Client.SendTextMessageAsync(e.Message.Chat.Id, "Для виклику лекцій використовуйте команду /study. Уважно прочитайте її вміст і приступайте до тестів, в випадку успішного проходження (мінімум 60% вірних відповідей) Ви отримуєте доступ до наступної лекції. Вдалого навчання 😉");
                     break;
                 case "/study":
-                    Client.SendPhotoAsync(currentUser.ChatID, photo: Pics[currentUser.Level]);
-                    Client.SendTextMessageAsync(currentUser.ChatID, Lectures[currentUser.Level], replyMarkup: inlineKeyboardOK);
-                    currentUser.Manager.SetXFile("Tests\\Test" + currentUser.Level + ".xml");
-                    currentUser.Manager.ReadTest();
+                    if(currentUser.Level != 9) 
+                    {
+                        Client.SendPhotoAsync(currentUser.ChatID, photo: Pics[currentUser.Level]);
+                        Client.SendTextMessageAsync(currentUser.ChatID, Lectures[currentUser.Level], replyMarkup: inlineKeyboardOK);
+                        currentUser.Manager.SetXFile("Tests\\Test" + currentUser.Level + ".xml");
+                        currentUser.Manager.ReadTest();
+                    }
+                    else
+                    {
+                        Client.SendTextMessageAsync(e.Message.Chat.Id, "Ви вже закінчили навчання ✅ \n Щоб пройти курс заново, оберіть команду /reset.");
+                    }
                     break;
                 case "/showlectures":
                     string @string = "";
@@ -71,11 +78,11 @@ namespace ConsoleBot
                     break;
                 case "/reset":
                     currentUser.Level = 0;
-                    Client.SendTextMessageAsync(currentUser.ChatID, "Повернення до початкового рівня.");
+                    Client.SendTextMessageAsync(currentUser.ChatID, "Повернення до початкового рівня ⏪");
                     XMLmanager.UpdateLevel(currentUser);
                     break;
                 case "/donate":
-                    Client.SendTextMessageAsync(currentUser.ChatID, "Ви можете оцінити наш проект або почати стежити за ним за наступним посиланням.", replyMarkup: urlButton);
+                    Client.SendTextMessageAsync(currentUser.ChatID, "Ви можете оцінити наш проект або почати стежити за ним за наступним посиланням 😉", replyMarkup: urlButton);
                     break;
                 case "1": case "2" :case "3": case "4":
                     currentUser.Manager.Examination.TakeAnswer(Client, currentUser, replyKeyboard, Convert.ToInt32(e.Message.Text));
@@ -94,7 +101,7 @@ namespace ConsoleBot
             if(e.CallbackQuery.Data == "OK")
             {
                 Client.AnswerCallbackQueryAsync(e.CallbackQuery.Id);
-                Client.SendTextMessageAsync(currentUser.ChatID, $"Ви розпочинаете тест на тему {currentUser.Level + 1}-ої лекції");
+                //Client.SendTextMessageAsync(currentUser.ChatID, $"Ви розпочинаете тест на тему {currentUser.Level + 1}-ої лекції");
                 currentUser.Manager.Examination.ShowTest(Client, currentUser.ChatID, replyKeyboard);
 
             }
