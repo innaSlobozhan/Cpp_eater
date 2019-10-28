@@ -18,7 +18,7 @@ namespace ConsoleBot
         {
             new KeyboardButton[]
             {
-                new KeyboardButton(){Text = "1⃣"},
+                new KeyboardButton(){Text = "1"},
                 new KeyboardButton(){Text = "2"}
             },
             new KeyboardButton[]
