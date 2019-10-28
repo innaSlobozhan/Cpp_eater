@@ -34,7 +34,7 @@ namespace ConsoleBot.TestApi
 
             foreach (Question item in questions)
             {
-                strQuest += $"{emojies[i]} {item.question} - {item.answer}\n\n";
+                strQuest += $"{emojies[i]} {item.question}\n\n";
                 i++;
             }
 

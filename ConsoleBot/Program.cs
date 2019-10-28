@@ -10,7 +10,7 @@ namespace ConsoleBot
     {
         #region Vars
         static string[] Lectures = { "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-1-Vstup-10-27", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-2-10-28", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-3-10-28", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-4-10-28", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-5-10-28" };
-        
+        static string[] Pics = { "https://github.com/TelegramBots/book/raw/master/src/docs/photo-ara.jpg", "https://surik00.gitbooks.io/aiogram-lessons/assets/lesson-05/ReplyKeyboardMarkup-1.jpg" };
         static InlineKeyboardMarkup inlineKeyboardOK = new InlineKeyboardMarkup(new InlineKeyboardButton() { Text = "Почати тестування", CallbackData = "OK"});
         static InlineKeyboardMarkup urlButton = new InlineKeyboardMarkup(new InlineKeyboardButton() { Text = "Проект на  Github", Url = "https://github.com/innaSlobozhan/Cpp_eater", CallbackData = "URL"});
 
@@ -56,6 +56,7 @@ namespace ConsoleBot
                     Client.SendTextMessageAsync(e.Message.Chat.Id, "Для виклику лекцій використовуйте команду /study. Уважно прочитайте її вміст і приступайте до тестів, в випадку успішного проходження (мінімум 60% вірних відповідей) Ви отримуєте доступ до наступної лекції.");
                     break;
                 case "/study":
+                    Client.SendPhotoAsync(currentUser.ChatID, photo: Pics[currentUser.Level]);
                     Client.SendTextMessageAsync(currentUser.ChatID, Lectures[currentUser.Level], replyMarkup: inlineKeyboardOK);
                     currentUser.Manager.SetXFile("Tests\\Test" + currentUser.Level + ".xml");
                     currentUser.Manager.ReadTest();
@@ -71,6 +72,7 @@ namespace ConsoleBot
                 case "/reset":
                     currentUser.Level = 0;
                     Client.SendTextMessageAsync(currentUser.ChatID, "Повернення до початкового рівня.");
+                    XMLmanager.UpdateLevel(currentUser);
                     break;
                 case "/donate":
                     Client.SendTextMessageAsync(currentUser.ChatID, "Ви можете оцінити наш проект або почати стежити за ним за наступним посиланням.", replyMarkup: urlButton);
