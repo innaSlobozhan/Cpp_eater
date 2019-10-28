@@ -1,38 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 <RootTest>
   <Test id="0">
-     <Question >*Hui*</Question>
-      <Answer answer ="true">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
+     <Question >Механізм, який об’єднує дані та код, що маніпулює цими даними, і захищає те й інше від зовнішнього втручанння або неправильного використання, називається:</Question>
+      <Answer answer ="true">Інкапсуляція</Answer>
+      <Answer answer ="false">Поліморфізм</Answer>
+      <Answer answer ="false">Успадкування</Answer>
+      <Answer answer ="false">Абстрагування</Answer>
   </Test>
   <Test id="1">
-    <Question >*Вопрос*</Question>
-      <Answer answer ="true">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
+    <Question >Що таке "клас"?</Question>
+      <Answer answer ="false">Система оцінки фото в соціальній мережі "Однокласники"</Answer>
+      <Answer answer ="false">Окрема одиниця сховища даних під час роботи програми, що використовується як базовий елемент побудови програми</Answer>
+      <Answer answer ="true">Складний тип даних, що визначається користувачем</Answer>
+      <Answer answer ="false">Абстрактна назва комірки чи декількох комірок пам'яті</Answer>
   </Test>
   <Test id="2">
-    <Question >*Вопрос*</Question>
-      <Answer answer ="true">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
+    <Question >Які існують модифікатори доступу в мові програмування С++?</Question>
+      <Answer answer ="false">public, protected internal, private protected</Answer>
+      <Answer answer ="true">public, private, protected</Answer>
+      <Answer answer ="false">public, private, internal</Answer>
+      <Answer answer ="false">open, public</Answer>
   </Test>
   <Test id="3">
-    <Question >*Вопрос*</Question>
-      <Answer answer ="true">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
+    <Question >Що таке "Об'єкт" у мові програмування С++?</Question>
+      <Answer answer ="false">Матеріальний предмет пізнання і практичного впливу з боку людини (суб'єкта)</Answer>
+      <Answer answer ="false">Елемент ПО, що описує абстрактний тип даних і його часткову або повну реалізацію</Answer>
+      <Answer answer ="false">Те саме, що й змінна</Answer>
+      <Answer answer ="true">Змінна типу “клас”</Answer>
   </Test>
   <Test id="4">
-    <Question >*Вопрос*</Question>
-      <Answer answer ="true">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
+    <Question >Виберіть правильний варіант оголошення об'єкту классу myclass:</Question>
+      <Answer answer ="true">myclass ob1, ob2;</Answer>
+      <Answer answer ="false">myclass: ob1, ob2;</Answer>
+      <Answer answer ="false">myclass = ob1, ob2;</Answer>
+      <Answer answer ="false">myclass 'ob1', 'ob2';</Answer>
+  </Test>
+  <Test id="5">
+    <Question >Що таке "конструктор" у мові програмування С++?</Question>
+      <Answer answer ="false">Конструктор викликається у разі знищення об’єктів</Answer>
+      <Answer answer ="true">Функція-член класу, яка включається в описання класу і має те саме ім’я, що і клас та створює значення типу "клас"</Answer>
+      <Answer answer ="false">Функція класу, створенна для сбору компонентів класу</Answer>
+      <Answer answer ="false">Набір деталей, призначені для причинення болі людині</Answer>
+  </Test>
+  <Test id="6">
+    <Question >Який варіант оголошення конструктора классу myclass правильний?</Question>
+      <Answer answer ="false">
+      class myclass 
+      {
+        public:
+              ... // оголошення відкритих членів класу
+        constructor(список_параметрів); 
+      };
+        </Answer>
+      <Answer answer ="false">
+      class myclass 
+      {
+        public:
+              ... // оголошення відкритих членів класу
+        constructor myclass(список_параметрів); 
+      };
+      </Answer>
+      <Answer answer ="false">
+      class myclass 
+      {
+        public:
+              ... // оголошення відкритих членів класу
+        constructor_myclass(список_параметрів); 
+      };
+      </Answer>
+      <Answer answer ="true">
+      class myclass 
+      {
+        public:
+              ... // оголошення відкритих членів класу
+        myclass(список_параметрів); 
+      };
+      </Answer>
+  </Test>
+  <Test id="7">
+    <Question >Яка відмінність між закритими та відкритими членами класу?</Question>
+      <Answer answer ="true">Закриті члени класу доступні для інших членів цього класу, але не досяжні поза цим класом</Answer>
+      <Answer answer ="false">Відмінності відсутні</Answer>
+      <Answer answer ="false">Закриті члени - це методи, а відкриті - це поля</Answer>
+      <Answer answer ="false">На відкриті члени виділяють більше пам'яті</Answer>
+  </Test>
+  <Test id="8">
+    <Question >Що таке "деструктор" у мові програмування С++?</Question>
+      <Answer answer ="true">Функція, обернена до конструктора, викликається у разі знищення об’єктів</Answer>
+      <Answer answer ="false">Функція, що викликається при оголошенні об'єкта та виділяє на нього пам'ять</Answer>
+      <Answer answer ="false">Функція, що контролює передачу данних у тедоти класу</Answer>
+      <Answer answer ="false">Функція, що контролює закриті поля класу</Answer>
+  </Test>
+  <Test id="9">
+    <Question>Який варіант оголошення деструктора классу myclass правильний?</Question>
+      <Answer answer ="false">
+      class myclass { 
+          public: 
+       ... // оголошення відкритих членів класу
+          ~destructure();
+      }; 
+        </Answer>
+      <Answer answer ="false">
+      class myclass { 
+          public: 
+       ... // оголошення відкритих членів класу
+          ~myclass(список_параметрів);
+      }; 
+      </Answer>
+      <Answer answer ="false">
+      class myclass { 
+          public: 
+       ... // оголошення відкритих членів класу
+          myclass();
+      }; 
+      </Answer>
+      <Answer answer ="true">
+      class myclass { 
+          public: 
+       ... // оголошення відкритих членів класу
+          ~myclass();
+      }; 
+      </Answer>
   </Test>
 </RootTest>

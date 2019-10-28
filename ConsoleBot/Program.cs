@@ -9,8 +9,8 @@ namespace ConsoleBot
     class Program
     {
         #region Vars
-        static string[] Lectures = { "http://telegra.ph/October-2-2014-01-22", "http://www.telegraph.co.uk/news/worldnews/europe/italy/7223365/Silvio-Berlusconi-says-immigrants-not-welcome-but-beautiful-girls-can-stay.html" };
-
+        static string[] Lectures = { "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-1-Vstup-10-27", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-2-10-28", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-3-10-28", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-4-10-28", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-5-10-28" };
+        
         static InlineKeyboardMarkup inlineKeyboardOK = new InlineKeyboardMarkup(new InlineKeyboardButton() { Text = "Почати тестування", CallbackData = "OK"});
         static InlineKeyboardMarkup urlButton = new InlineKeyboardMarkup(new InlineKeyboardButton() { Text = "Проект на  Github", Url = "https://github.com/innaSlobozhan/Cpp_eater", CallbackData = "URL"});
 
@@ -26,7 +26,7 @@ namespace ConsoleBot
                 new KeyboardButton(){Text = "3"},
                 new KeyboardButton(){Text = "4"}
             }
-        });
+        }, resizeKeyboard: true);
 
         static List<User> users = new List<User>();
         

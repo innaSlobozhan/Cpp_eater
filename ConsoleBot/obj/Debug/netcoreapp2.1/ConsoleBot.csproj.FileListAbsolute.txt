@@ -20,3 +20,14 @@ C:\Users\vital\Desktop\ConsoleBot\ConsoleBot\obj\Debug\netcoreapp2.1\ConsoleBot.
 C:\Users\vital\Desktop\ConsoleBot\ConsoleBot\obj\Debug\netcoreapp2.1\ConsoleBot.dll
 C:\Users\vital\Desktop\ConsoleBot\ConsoleBot\obj\Debug\netcoreapp2.1\ConsoleBot.pdb
 C:\Users\vital\Desktop\ConsoleBot\ConsoleBot\obj\Debug\netcoreapp2.1\ConsoleBot.csproj.CoreCompileInputs.cache
+C:\Users\vital\Source\Repos\innaSlobozhan\Cpp_eater\ConsoleBot\bin\Debug\netcoreapp2.1\ConsoleBot.deps.json
+C:\Users\vital\Source\Repos\innaSlobozhan\Cpp_eater\ConsoleBot\bin\Debug\netcoreapp2.1\ConsoleBot.runtimeconfig.json
+C:\Users\vital\Source\Repos\innaSlobozhan\Cpp_eater\ConsoleBot\bin\Debug\netcoreapp2.1\ConsoleBot.runtimeconfig.dev.json
+C:\Users\vital\Source\Repos\innaSlobozhan\Cpp_eater\ConsoleBot\bin\Debug\netcoreapp2.1\ConsoleBot.dll
+C:\Users\vital\Source\Repos\innaSlobozhan\Cpp_eater\ConsoleBot\bin\Debug\netcoreapp2.1\ConsoleBot.pdb
+C:\Users\vital\Source\Repos\innaSlobozhan\Cpp_eater\ConsoleBot\obj\Debug\netcoreapp2.1\ConsoleBot.csprojAssemblyReference.cache
+C:\Users\vital\Source\Repos\innaSlobozhan\Cpp_eater\ConsoleBot\obj\Debug\netcoreapp2.1\ConsoleBot.csproj.CoreCompileInputs.cache
+C:\Users\vital\Source\Repos\innaSlobozhan\Cpp_eater\ConsoleBot\obj\Debug\netcoreapp2.1\ConsoleBot.AssemblyInfoInputs.cache
+C:\Users\vital\Source\Repos\innaSlobozhan\Cpp_eater\ConsoleBot\obj\Debug\netcoreapp2.1\ConsoleBot.AssemblyInfo.cs
+C:\Users\vital\Source\Repos\innaSlobozhan\Cpp_eater\ConsoleBot\obj\Debug\netcoreapp2.1\ConsoleBot.dll
+C:\Users\vital\Source\Repos\innaSlobozhan\Cpp_eater\ConsoleBot\obj\Debug\netcoreapp2.1\ConsoleBot.pdb

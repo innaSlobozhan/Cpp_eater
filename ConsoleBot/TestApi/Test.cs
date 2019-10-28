@@ -25,14 +25,16 @@ namespace ConsoleBot.TestApi
 
         public string ShowTest()
         {
+            string[] emojies = { "1⃣", "2⃣", "3⃣", "4⃣" };
+        
             string strQuest = "";
-            int i = 1;
+            int i = 0;
 
-            strQuest += $"Питання: {TestName}\n";
+            strQuest += $"❓ {TestName}\n\n";
 
             foreach (Question item in questions)
             {
-                strQuest += $"{i}.{item.question} - {item.answer}\n";
+                strQuest += $"{emojies[i]} {item.question} - {item.answer}\n\n";
                 i++;
             }
 
