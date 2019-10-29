@@ -9,20 +9,16 @@ namespace ConsoleBot
     class Program
     {
         #region Vars
-        static string[] Lectures = { "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-1-Vstup-10-27", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-2-10-28", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-3-10-28", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-4-10-28", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-5-10-28" };
-        static string[] Pics = { "https://github.com/TelegramBots/book/raw/master/src/docs/photo-ara.jpg", "https://surik00.gitbooks.io/aiogram-lessons/assets/lesson-05/ReplyKeyboardMarkup-1.jpg" };
+        static string[] Lectures = { "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-1-Vstup-10-27", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-2-10-28", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-3-10-28", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-4-10-28", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-5-10-28", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-6-10-29", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-7-10-29", "https://telegra.ph/Osnovi-OOP-Lekcіya-8-10-29", "https://telegra.ph/Osnovi-OOP-Lekcіya-9-10-29", "https://telegra.ph/Osnovi-OOP-Lekc%D1%96ya-10-10-29" };
         static InlineKeyboardMarkup inlineKeyboardOK = new InlineKeyboardMarkup(new InlineKeyboardButton() { Text = "Почати тестування", CallbackData = "OK"});
         static InlineKeyboardMarkup urlButton = new InlineKeyboardMarkup(new InlineKeyboardButton() { Text = "Проект на  Github", Url = "https://github.com/innaSlobozhan/Cpp_eater", CallbackData = "URL"});
 
-        static ReplyKeyboardMarkup replyKeyboard = new ReplyKeyboardMarkup(new KeyboardButton[][]
+        static ReplyKeyboardMarkup replyKeyboard = new ReplyKeyboardMarkup(new KeyboardButton[]
         {
             new KeyboardButton[]
             {
                 new KeyboardButton(){Text = "1"},
-                new KeyboardButton(){Text = "2"}
-            },
-            new KeyboardButton[]
-            {
+                new KeyboardButton(){Text = "2"},
                 new KeyboardButton(){Text = "3"},
                 new KeyboardButton(){Text = "4"}
             }
