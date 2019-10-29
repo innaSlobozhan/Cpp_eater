@@ -1,38 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 <RootTest>
   <Test id="0">
-     <Question >*Вопрос*</Question>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
+     <Question > Як оголосити вказівник на об’єкт?</Question>
+      <Answer answer ="true">
+        myclass ob(120);
+        myclass *p;
+        p = 🙴ob;
+      </Answer>
+      <Answer answer ="false">
+       myclass ob(120);  
+       myclass *p;
+       p->ob;
+       </Answer>
+      <Answer answer ="false">
+       myclass ob(120);  
+       myclass *p;
+       p = *ob;
+      </Answer>
+      <Answer answer ="false">
+       myclass ob(120);  
+       myclass *p;
+       p=>ob;
+      </Answer>
   </Test>
   <Test id="1">
-    <Question >*Вопрос*</Question>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
+    <Question >Що таке вказівник this? </Question>
+      <Answer answer ="false">Це альтернатива оголошення об'єкту</Answer>
+      <Answer answer ="false">Це альтернатива оголошення классу</Answer>
+      <Answer answer ="true">Це — вказівник, який автоматично передається будь-якій функції-члену класу при її виклику і вказує на об’єкт, що генерує цей виклик</Answer>
+      <Answer answer ="false">Абстрактна назва комірки чи декількох комірок пам'яті</Answer>
   </Test>
   <Test id="2">
-    <Question >*Вопрос*</Question>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
+    <Question >Як звернутися у програмі до елементів масиву об’єктів? </Question>
+      <Answer answer ="true">Доступ до масивів об’єктів аналогічний доступу до масивів змінних будь-якого іншого типу</Answer>
+      <Answer answer ="false">За допомогою символа "!"</Answer>
+      <Answer answer ="false">За допомогою кричащих функцій</Answer>
+      <Answer answer ="false">Звернутися до елементів масиву неможливо</Answer>
   </Test>
   <Test id="3">
-    <Question >*Вопрос*</Question>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
+    <Question >Як отримати доступ до відкритих членів класу?</Question>
+      <Answer answer ="false">Для доступу до відкритих членів класу використовують операцію доступу двокрапка (:)</Answer>
+      <Answer answer ="false">Для доступу до відкритих членів класу використовують операцію доступу тире (-)</Answer>
+      <Answer answer ="false">Для доступу до відкритих членів класу використовують операцію доступу знак оклику (!)</Answer>
+      <Answer answer ="true">Для доступу до відкритих членів класу використовують операцію доступу крапка (.)</Answer>
   </Test>
   <Test id="4">
-    <Question >*Вопрос*</Question>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
-      <Answer answer ="false">*Ответ*</Answer>
+    <Question >Виберіть правильний варіант оголошення двовимірного масиву об’єктів</Question>
+      <Answer answer ="true">
+      myclass obj[4][2] = {
+        myclass (1, 2), myclass (3, 4),          
+        myclass (5, 6), myclass (7, 8),
+        myclass (9, 10), myclass (11, 12),
+        myclass (13, 14), myclass (15, 16)
+      }; 
+      </Answer>
+      <Answer answer ="false">
+      myclass obj[4][2] = 
+        myclass (1, 2), myclass (3, 4),          
+        myclass (5, 6), myclass (7, 8),
+        myclass (9, 10), myclass (11, 12),
+        myclass (13, 14), myclass (15, 16); 
+      </Answer>
+      <Answer answer ="false">
+      myclass obj[4][2] = [
+        myclass (1, 2), myclass (3, 4),          
+        myclass (5, 6), myclass (7, 8),
+        myclass (9, 10), myclass (11, 12),
+        myclass (13, 14), myclass (15, 16)
+      ]; 
+      </Answer>
+      <Answer answer ="false">
+      myclass obj[4][2]: {
+        myclass (1, 2), myclass (3, 4),          
+        myclass (5, 6), myclass (7, 8),
+        myclass (9, 10), myclass (11, 12),
+        myclass (13, 14), myclass (15, 16)
+      }; 
+      </Answer>
   </Test>
 </RootTest>
