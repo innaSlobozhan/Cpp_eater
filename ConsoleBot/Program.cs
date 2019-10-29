@@ -15,13 +15,10 @@ namespace ConsoleBot
 
         static ReplyKeyboardMarkup replyKeyboard = new ReplyKeyboardMarkup(new KeyboardButton[]
         {
-            new KeyboardButton[]
-            {
-                new KeyboardButton(){Text = "1"},
-                new KeyboardButton(){Text = "2"},
-                new KeyboardButton(){Text = "3"},
-                new KeyboardButton(){Text = "4"}
-            }
+            new KeyboardButton(){Text = "1"},
+            new KeyboardButton(){Text = "2"},
+            new KeyboardButton(){Text = "3"},
+            new KeyboardButton(){Text = "4"}
         }, resizeKeyboard: true);
 
         static List<User> users = new List<User>();
@@ -54,7 +51,7 @@ namespace ConsoleBot
                 case "/study":
                     if(currentUser.Level != 9) 
                     {
-                        Client.SendPhotoAsync(currentUser.ChatID, photo: Pics[currentUser.Level]);
+                        
                         Client.SendTextMessageAsync(currentUser.ChatID, Lectures[currentUser.Level], replyMarkup: inlineKeyboardOK);
                         currentUser.Manager.SetXFile("Tests\\Test" + currentUser.Level + ".xml");
                         currentUser.Manager.ReadTest();
