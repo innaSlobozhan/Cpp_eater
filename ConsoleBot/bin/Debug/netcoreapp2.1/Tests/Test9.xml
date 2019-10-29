@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<RootTest>
+  <Test id="0">
+     <Question >Що представляє собою система RTTI (Runtime Type Identification)?</Question>
+      <Answer answer ="true">Динамічна ідентифікація типу дає можливість визначити тип об'єкта під час виконання програми</Answer>
+      <Answer answer ="false">Динамічна ідентифікація типу дає можливість визначити тип об'єкта до початку виконання програми</Answer>
+      <Answer answer ="false">Це логічний пристрій, який видає та приймає інформацію</Answer>
+      <Answer answer ="false">Це система  введення-виведення  С++</Answer>
+  </Test>
+  <Test id="1">
+    <Question >Що подібно для отримання структури type_info?</Question>
+      <Answer answer ="false">Цей клас повертається в результаті застосування оператора type_id</Answer>
+      <Answer answer ="true">Цей клас повертається в результаті застосування оператора typeid</Answer>
+      <Answer answer ="false">Цей клас повертається в результаті застосування оператора TypeId</Answer>
+      <Answer answer ="false">Цей клас повертається в результаті застосування оператора Type_Id</Answer>
+  </Test>
+  <Test id="2">
+    <Question >Які операції та методи підтримує структура type_info?</Question>
+      <Answer answer ="true">==, !=, before(), name()</Answer>
+      <Answer answer ="false">‹=, ›=, before(), name()</Answer>
+      <Answer answer ="false">==, !, before(), name()</Answer>
+      <Answer answer ="false">-, +, before(), name()</Answer>
+  </Test>
+  <Test id="3">
+    <Question >Опишіть зміст оператора typeid</Question>
+      <Answer answer ="false">
+         Оператор typeid можна використовувати для отримання вказіваника на ім'я типу  
+      </Answer>
+      <Answer answer ="false">
+         Оператор typeid можна використовувати для отримання значення true, якщо повертає об'єкт в порядку зіставлення стоїть перед об'єктом, використовуваним в якості параметр
+      </Answer>
+      <Answer answer ="false">
+         Оператор typeid можна використовувати для порівняння типів
+      </Answer>
+      <Answer answer ="true">
+         Оператор typeid можна використовувати для визначення типу об'єкта, що адресується покажчиком на базовий клас
+      </Answer>
+  </Test>
+  <Test id="4">
+    <Question >
+    Яка форма застосування typeid::name() коректна?
+    </Question>
+      <Answer answer ="true">
+        Shape *s[3];
+        s[0] = new Circle(10);
+        s[1] = new Rectangle(1, 8);
+        s[2] = new Triangle(5, 12, 7);
+        // Визначаємо тип елеменов масиву
+        for (int i = 0; i ‹ 3; i++)
+          puts(typeid(*s[i]).name());
+      </Answer>
+      <Answer answer ="false">
+        Shape *s[3];
+        s[0] = new Circle(10);
+        s[1] = new Rectangle(1, 8);
+        s[2] = new Triangle(5, 12, 7);
+        // Визначаємо тип елеменов масиву
+        for (int i = 0; i ‹ 3; i++)
+          puts(typeid(*s[i])::name());
+      </Answer>
+      <Answer answer ="false">
+        Shape *s[3];
+        s[0] = new Circle(10);
+        s[1] = new Rectangle(1, 8);
+        s[2] = new Triangle(5, 12, 7);
+        // Визначаємо тип елеменов масиву
+        for (int i = 0; i ‹ 3; i++)
+          puts(typeid(*s[i])->name());
+      </Answer>
+      <Answer answer ="false">
+        Shape *s[3];
+        s[0] = new Circle(10);
+        s[1] = new Rectangle(1, 8);
+        s[2] = new Triangle(5, 12, 7);
+        // Визначаємо тип елеменов масиву
+        for (int i = 0; i ‹ 3; i++)
+          puts(typeid(*s[i])[name())];
+      </Answer>
+  </Test>
+</RootTest>
