@@ -50,7 +50,7 @@ namespace ConsoleBot
                         Client.SendTextMessageAsync(e.Message.Chat.Id, "Для виклику лекцій використовуйте команду /study. Уважно прочитайте її вміст і приступайте до тестів, в випадку успішного проходження (мінімум 60% вірних відповідей) Ви отримуєте доступ до наступної лекції. Вдалого навчання 😉");
                         break;
                     case "/study":
-                        if (currentUser.Level != 9)
+                        if (currentUser.Level < 10)
                         {
 
                             Client.SendTextMessageAsync(currentUser.ChatID, Lectures[currentUser.Level], replyMarkup: inlineKeyboardOK);
@@ -90,6 +90,12 @@ namespace ConsoleBot
                 }
                 #endregion
             }
+            catch(NullReferenceException nullEx)
+            {
+                ExtensionList.Add(users, new User(e.Message.Chat.Id));
+                Client.SendTextMessageAsync(e.Message.Chat.Id, "Для виклику лекцій використовуйте команду /study. Уважно прочитайте її вміст і приступайте до тестів, в випадку успішного проходження (мінімум 60% вірних відповідей) Ви отримуєте доступ до наступної лекції. Вдалого навчання 😉");
+                Console.WriteLine(nullEx.Message);
+            }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
@@ -104,16 +110,20 @@ namespace ConsoleBot
                 if (e.CallbackQuery.Data == "OK")
                 {
                     Client.AnswerCallbackQueryAsync(e.CallbackQuery.Id);
-                    //Client.SendTextMessageAsync(currentUser.ChatID, $"Ви розпочинаете тест на тему {currentUser.Level + 1}-ої лекції");
                     currentUser.Manager.Examination.ShowTest(Client, currentUser.ChatID, replyKeyboard);
-
                 }
                 else if (e.CallbackQuery.Data == "URL")
                 {
                     Client.AnswerCallbackQueryAsync(e.CallbackQuery.Id);
                 }
             }
-            catch(Exception ex)
+            catch (NullReferenceException nullEx)
+            {
+                ExtensionList.Add(users, new User(e.CallbackQuery.Message.Chat.Id));
+                Client.SendTextMessageAsync(e.CallbackQuery.Message.Chat.Id, "Для виклику лекцій використовуйте команду /study. Уважно прочитайте її вміст і приступайте до тестів, в випадку успішного проходження (мінімум 60% вірних відповідей) Ви отримуєте доступ до наступної лекції. Вдалого навчання 😉");
+                Console.WriteLine(nullEx.Message);
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }

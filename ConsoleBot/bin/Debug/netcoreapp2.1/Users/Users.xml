@@ -1,10 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <users>
   <user ID="120148472">
-    <level>0</level>
-  </user>
-  <user ID="353740728">
-    <level>4</level>
+    <level>1</level>
   </user>
   <user ID="356320797">
     <level>0</level>
@@ -17,5 +14,11 @@
   </user>
   <user ID="377816375">
     <level>1</level>
+  </user>
+  <user ID="399168089">
+    <level>0</level>
+  </user>
+  <user ID="353740728">
+    <level>0</level>
   </user>
 </users>
