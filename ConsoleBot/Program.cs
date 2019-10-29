@@ -40,67 +40,82 @@ namespace ConsoleBot
         static void Command_Handler(object Sender, MessageEventArgs e)
         {
             User currentUser = users.Find(user => user.ChatID == e.Message.Chat.Id);
-
-            #region Commands
-            switch (e.Message.Text)
+            try
             {
-                case "/start":
-                    ExtensionList.Add(users, new User(e.Message.Chat.Id));
-                    Client.SendTextMessageAsync(e.Message.Chat.Id, "Для виклику лекцій використовуйте команду /study. Уважно прочитайте її вміст і приступайте до тестів, в випадку успішного проходження (мінімум 60% вірних відповідей) Ви отримуєте доступ до наступної лекції. Вдалого навчання 😉");
-                    break;
-                case "/study":
-                    if(currentUser.Level != 9) 
-                    {
-                        
-                        Client.SendTextMessageAsync(currentUser.ChatID, Lectures[currentUser.Level], replyMarkup: inlineKeyboardOK);
-                        currentUser.Manager.SetXFile("Tests\\Test" + currentUser.Level + ".xml");
-                        currentUser.Manager.ReadTest();
-                    }
-                    else
-                    {
-                        Client.SendTextMessageAsync(e.Message.Chat.Id, "Ви вже закінчили навчання ✅ \n Щоб пройти курс заново, оберіть команду /reset.");
-                    }
-                    break;
-                case "/showlectures":
-                    string @string = "";
-                    for (int i = 0; i <= currentUser.Level; i++)
-                    {
-                        @string += $"{i + 1}. " + Lectures[i] + "\n";
-                    }
-                    Client.SendTextMessageAsync(currentUser.ChatID, @string);
-                    break;
-                case "/reset":
-                    currentUser.Level = 0;
-                    Client.SendTextMessageAsync(currentUser.ChatID, "Повернення до початкового рівня ⏪");
-                    XMLmanager.UpdateLevel(currentUser);
-                    break;
-                case "/donate":
-                    Client.SendTextMessageAsync(currentUser.ChatID, "Ви можете оцінити наш проект або почати стежити за ним за наступним посиланням 😉", replyMarkup: urlButton);
-                    break;
-                case "1": case "2" :case "3": case "4":
-                    currentUser.Manager.Examination.TakeAnswer(Client, currentUser, replyKeyboard, Convert.ToInt32(e.Message.Text));
-                    break;
-                default:
-                    Client.SendTextMessageAsync(currentUser.ChatID, "Невідома команда!");
-                    break;
+                #region Commands
+                switch (e.Message.Text)
+                {
+                    case "/start":
+                        ExtensionList.Add(users, new User(e.Message.Chat.Id));
+                        Client.SendTextMessageAsync(e.Message.Chat.Id, "Для виклику лекцій використовуйте команду /study. Уважно прочитайте її вміст і приступайте до тестів, в випадку успішного проходження (мінімум 60% вірних відповідей) Ви отримуєте доступ до наступної лекції. Вдалого навчання 😉");
+                        break;
+                    case "/study":
+                        if (currentUser.Level != 9)
+                        {
+
+                            Client.SendTextMessageAsync(currentUser.ChatID, Lectures[currentUser.Level], replyMarkup: inlineKeyboardOK);
+                            currentUser.Manager.SetXFile("Tests\\Test" + currentUser.Level + ".xml");
+                            currentUser.Manager.ReadTest();
+                        }
+                        else
+                        {
+                            Client.SendTextMessageAsync(e.Message.Chat.Id, "Ви вже закінчили навчання ✅ \n Щоб пройти курс заново, оберіть команду /reset.");
+                        }
+                        break;
+                    case "/showlectures":
+                        string @string = "";
+                        for (int i = 0; i <= currentUser.Level; i++)
+                        {
+                            @string += $"{i + 1}. " + Lectures[i] + "\n";
+                        }
+                        Client.SendTextMessageAsync(currentUser.ChatID, @string);
+                        break;
+                    case "/reset":
+                        currentUser.Level = 0;
+                        Client.SendTextMessageAsync(currentUser.ChatID, "Повернення до початкового рівня ⏪");
+                        XMLmanager.UpdateLevel(currentUser);
+                        break;
+                    case "/donate":
+                        Client.SendTextMessageAsync(currentUser.ChatID, "Ви можете оцінити наш проект або почати стежити за ним за наступним посиланням 😉", replyMarkup: urlButton);
+                        break;
+                    case "1":
+                    case "2":
+                    case "3":
+                    case "4":
+                        currentUser.Manager.Examination.TakeAnswer(Client, currentUser, replyKeyboard, Convert.ToInt32(e.Message.Text));
+                        break;
+                    default:
+                        Client.SendTextMessageAsync(currentUser.ChatID, "Невідома команда!");
+                        break;
+                }
+                #endregion
             }
-            #endregion
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         static void Keyboard_Handler(object sender, CallbackQueryEventArgs e)
         {
             User currentUser = users.Find(user => user.ChatID == e.CallbackQuery.Message.Chat.Id);
-            
-            if(e.CallbackQuery.Data == "OK")
+            try
             {
-                Client.AnswerCallbackQueryAsync(e.CallbackQuery.Id);
-                //Client.SendTextMessageAsync(currentUser.ChatID, $"Ви розпочинаете тест на тему {currentUser.Level + 1}-ої лекції");
-                currentUser.Manager.Examination.ShowTest(Client, currentUser.ChatID, replyKeyboard);
+                if (e.CallbackQuery.Data == "OK")
+                {
+                    Client.AnswerCallbackQueryAsync(e.CallbackQuery.Id);
+                    //Client.SendTextMessageAsync(currentUser.ChatID, $"Ви розпочинаете тест на тему {currentUser.Level + 1}-ої лекції");
+                    currentUser.Manager.Examination.ShowTest(Client, currentUser.ChatID, replyKeyboard);
 
+                }
+                else if (e.CallbackQuery.Data == "URL")
+                {
+                    Client.AnswerCallbackQueryAsync(e.CallbackQuery.Id);
+                }
             }
-            else if(e.CallbackQuery.Data == "URL")
+            catch(Exception ex)
             {
-                Client.AnswerCallbackQueryAsync(e.CallbackQuery.Id);
+                Console.WriteLine(ex.Message);
             }
         }
     }
