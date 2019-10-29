@@ -5,7 +5,7 @@
       <Answer answer ="true">
         myclass ob(120);
         myclass *p;
-        p = 🙴ob;
+        p = ﹠ob;
       </Answer>
       <Answer answer ="false">
        myclass ob(120);  

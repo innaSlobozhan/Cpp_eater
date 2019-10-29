@@ -31,7 +31,7 @@
   <Test id="4">
     <Question >Виберіть правильний варіант оголошення конструктору копіювання класу myclass</Question>
       <Answer answer ="true">
-        myclass (const myclass 🙴obj) {
+        myclass (const myclass ﹠obj) {
         ... // тіло конструктора
         }
       </Answer>
@@ -41,12 +41,12 @@
       }
       </Answer>
       <Answer answer ="false">
-        myclass constructor(const myclass 🙴obj) {
+        myclass constructor(const myclass ﹠obj) {
         ... // тіло конструктора
         }
       </Answer>
       <Answer answer ="false">
-        constructor(const myclass 🙴obj) {
+        constructor(const myclass ﹠obj) {
         ... // тіло конструктора
         }
       </Answer>

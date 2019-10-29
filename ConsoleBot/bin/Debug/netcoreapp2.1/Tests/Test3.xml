@@ -5,7 +5,7 @@
       <Answer answer ="true">(+), (-), (*)</Answer>
       <Answer answer ="false">(+), (-), (!)</Answer>
       <Answer answer ="false">(+), (->), (*)</Answer>
-      <Answer answer ="false">(🙴), (-), (*)</Answer>
+      <Answer answer ="false">(﹠), (-), (*)</Answer>
   </Test>
   <Test id="1">
     <Question >Які оператори називають бінарними?</Question>

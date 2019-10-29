@@ -24,28 +24,28 @@
   <Test id="3">
     <Question >Яка загальна форма функції вставки? </Question>
       <Answer answer ="false">
-        ofstream 🙴operator‹‹(ostream 🙴stream, ім’я_класу ob)
+        ofstream ﹠operator‹‹(ostream ﹠stream, ім’я_класу ob)
         {
         … //Тіло функції вставки
         return stream;
         }
       </Answer>
       <Answer answer ="false">
-      ostream 🙴operator>>(ostream 🙴stream, ім’я_класу ob)
+      ostream ﹠operator>>(ostream ﹠stream, ім’я_класу ob)
       {
           … //Тіло функції вставки  
          return stream; 
       }  
       </Answer>
       <Answer answer ="false">
-        ostream 🙴operator‹‹()
+        ostream ﹠operator‹‹()
         {
         … //Тіло функції вставки
         return stream;
         }
       </Answer>
       <Answer answer ="true">
-        ostream 🙴operator‹‹(ostream 🙴stream, ім’я_класу ob)
+        ostream ﹠operator‹‹(ostream ﹠stream, ім’я_класу ob)
         {
         … //Тіло функції вставки
         return stream;
@@ -57,28 +57,28 @@
     Яка загальна форма функції вилучення?
     </Question>
       <Answer answer ="true">
-      istream 🙴operator>>(istream 🙴stream, ім’я_класу 🙴ob)
+      istream ﹠operator>>(istream ﹠stream, ім’я_класу ﹠ob)
       {   
          … //Тіло функції вилучення   
          return stream; 
       }
       </Answer>
       <Answer answer ="false">
-        istream operator‹‹(istream stream, ім’я_класу 🙴ob)
+        istream operator‹‹(istream stream, ім’я_класу ﹠ob)
         {
         … //Тіло функції вилучення
         return stream;
         }
       </Answer>
       <Answer answer ="false">
-        fstream 🙴operator››(istream 🙴stream, ім’я_класу 🙴ob)
+        fstream ﹠operator››(istream ﹠stream, ім’я_класу ﹠ob)
         {
         … //Тіло функції вилучення
         return stream;
         }
       </Answer>
       <Answer answer ="false">
-        istream 🙴operator››()
+        istream ﹠operator››()
         {
         … //Тіло функції вилучення
         return stream;
