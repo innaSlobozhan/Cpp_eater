@@ -33,7 +33,21 @@ namespace ConsoleBot
             Client.OnMessage += Command_Handler;
             Client.OnCallbackQuery += Keyboard_Handler;
             Client.StartReceiving();
-            Console.ReadKey(true);
+            bool truth = true;
+            while (truth)
+            {
+                string str = Console.ReadLine();
+                string[] com = str.Split(" ");
+                switch (com[0])
+                {
+                    case "send":
+                        Client.SendTextMessageAsync(com[1], com[2]);
+                        break;
+                    case "exit":
+                        truth = false;
+                        break;
+                }
+            }
             Client.StopReceiving();
         }
 
@@ -66,7 +80,8 @@ namespace ConsoleBot
                         string @string = "";
                         for (int i = 0; i <= currentUser.Level; i++)
                         {
-                            @string += $"{i + 1}. " + Lectures[i] + "\n";
+                            if(i < 10)
+                                @string += $"{i + 1}. " + Lectures[i] + "\n";
                         }
                         Client.SendTextMessageAsync(currentUser.ChatID, @string);
                         break;
