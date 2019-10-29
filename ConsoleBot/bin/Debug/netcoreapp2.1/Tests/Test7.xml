@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<RootTest>
+  <Test id="0">
+     <Question >Що таке виняткова ситуація? </Question>
+      <Answer answer ="true">Виняткові ситуації — виникнення непередбачених помилкових умов</Answer>
+      <Answer answer ="false">Це процес, завдяки якому загальний інтерфейс застосовується до двох або більше схожих (але технічно різних) ситуацій</Answer>
+      <Answer answer ="false">Це приховування деталей про роботу класів від об'єктів, що їх використовують або надсилають їм повідомлення</Answer>
+      <Answer answer ="false">Це спрощення складної дійсності шляхом моделювання класів, що відповідають проблемі, та використання найприйнятнішого рівня деталізації окремих аспектів проблеми</Answer>
+  </Test>
+  <Test id="1">
+    <Question >Яка загальна форма оператора throw?</Question>
+      <Answer answer ="false">throw->виняткова_ситуація; </Answer>
+      <Answer answer ="true">throw виняткова_ситуація; </Answer>
+      <Answer answer ="false">throw = виняткова_ситуація; </Answer>
+      <Answer answer ="false">throw: виняткова_ситуація; </Answer>
+  </Test>
+  <Test id="2">
+    <Question >Скільки catch можна зв'язати з try?</Question>
+      <Answer answer ="true">З блоком try можна зв’язати більше одного оператора catch</Answer>
+      <Answer answer ="false">З блоком try можна зв’язати лише один оператор catch</Answer>
+      <Answer answer ="false">З блоком try можна зв’язати два та більше оператора catch</Answer>
+      <Answer answer ="false">З блоком try можна зв’язати лише два оператора catch</Answer>
+  </Test>
+  <Test id="3">
+    <Question >Що називається обробленням виняткових ситуацій? </Question>
+      <Answer answer ="false">Це процес, завдяки якому загальний інтерфейс застосовується до двох або більше схожих (але технічно різних) ситуацій</Answer>
+      <Answer answer ="false">>Можливість сповістити програміста о помилці</Answer>
+      <Answer answer ="false">Описання імпровізації програми</Answer>
+      <Answer answer ="true">Можливість відновити програму за умов помилки та продовжити її виконання</Answer>
+  </Test>
+  <Test id="4">
+    <Question >
+    Виберіть вірні загальні форми операторів try, catch:
+    </Question>
+      <Answer answer ="true">
+      try {
+         … //блок try 
+      } 
+      catch(type1 arg) 
+      {
+         … //блок catch 
+      } 
+      </Answer>
+      <Answer answer ="false">
+      catch(type1 arg) 
+      {
+         … //блок catch 
+      }
+      try {
+         … //блок try 
+      } 
+      </Answer>
+      <Answer answer ="false">
+      try catch {
+         … //блок try 
+      } 
+      (type1 arg) 
+      {
+         … //блок catch 
+      } 
+      </Answer>
+      <Answer answer ="false">
+      try {
+         … //блок try 
+      } 
+      (type1 arg) catch
+      {
+         … //блок catch 
+      } 
+      </Answer>
+  </Test>
+</RootTest>

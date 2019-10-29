@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<RootTest>
+  <Test id="0">
+     <Question >Які основні положення системи уведення-виведення C++? </Question>
+      <Answer answer ="true">Система  введення-виведення  С++  діє через потоки </Answer>
+      <Answer answer ="false">Система  введення-виведення  С++  діє через файли</Answer>
+      <Answer answer ="false">Система  введення-виведення  С++  діє через діалогове вікно</Answer>
+      <Answer answer ="false">Система  введення-виведення  С++  діє через ріки</Answer>
+  </Test>
+  <Test id="1">
+    <Question >Що таке потік? </Question>
+      <Answer answer ="false">Це процес, завдяки якому загальний інтерфейс застосовується до двох або більше схожих (але технічно різних) ситуацій </Answer>
+      <Answer answer ="true">Потік — це логічний пристрій, який видає та приймає інформацію</Answer>
+      <Answer answer ="false">Це спрощення складної дійсності шляхом моделювання класів, що відповідають проблемі, та використання найприйнятнішого рівня деталізації окремих аспектів проблеми</Answer>
+      <Answer answer ="false">Це можливість сповістити програміста о помилці</Answer>
+  </Test>
+  <Test id="2">
+    <Question > Які потоки відкриваються під час запуску програми мовою C++? </Question>
+      <Answer answer ="true">cin, cout, cerr, clog</Answer>
+      <Answer answer ="false">cin, cout, cerr, fstream</Answer>
+      <Answer answer ="false">cin, cout, ifstream, fstream</Answer>
+      <Answer answer ="false">cin, cout, ofstream, fstream</Answer>
+  </Test>
+  <Test id="3">
+    <Question >Яка загальна форма функції вставки? </Question>
+      <Answer answer ="false">
+        ofstream 🙴operator‹‹(ostream 🙴stream, ім’я_класу ob)
+        {
+        … //Тіло функції вставки
+        return stream;
+        }
+      </Answer>
+      <Answer answer ="false">
+      ostream 🙴operator>>(ostream 🙴stream, ім’я_класу ob)
+      {
+          … //Тіло функції вставки  
+         return stream; 
+      }  
+      </Answer>
+      <Answer answer ="false">
+        ostream 🙴operator‹‹()
+        {
+        … //Тіло функції вставки
+        return stream;
+        }
+      </Answer>
+      <Answer answer ="true">
+        ostream 🙴operator‹‹(ostream 🙴stream, ім’я_класу ob)
+        {
+        … //Тіло функції вставки
+        return stream;
+        }
+      </Answer>
+  </Test>
+  <Test id="4">
+    <Question >
+    Яка загальна форма функції вилучення?
+    </Question>
+      <Answer answer ="true">
+      istream 🙴operator>>(istream 🙴stream, ім’я_класу 🙴ob)
+      {   
+         … //Тіло функції вилучення   
+         return stream; 
+      }
+      </Answer>
+      <Answer answer ="false">
+        istream operator‹‹(istream stream, ім’я_класу 🙴ob)
+        {
+        … //Тіло функції вилучення
+        return stream;
+        }
+      </Answer>
+      <Answer answer ="false">
+        fstream 🙴operator››(istream 🙴stream, ім’я_класу 🙴ob)
+        {
+        … //Тіло функції вилучення
+        return stream;
+        }
+      </Answer>
+      <Answer answer ="false">
+        istream 🙴operator››()
+        {
+        … //Тіло функції вилучення
+        return stream;
+        }
+      </Answer>
+  </Test>
+</RootTest>
