@@ -45,8 +45,12 @@ namespace ConsoleBot.TestApi
                         testPos = 0;
 
                         if (currentUser.Level < 10)
+                        {
                             currentUser.LevelUp();
-
+                            if (currentUser.Level == 10)
+                                bot.SendTextMessageAsync(currentUser.ChatID, "✨ Вітаємо з завершенням нашого курсу ✨ \nЩоб пройти курс заново, оберіть команду /reset.");
+                        }
+                      
                         XMLmanager.UpdateLevel(currentUser);
                     }
                     else if ((((double)answerCount / tests.Count) * 100) < 80)

@@ -73,7 +73,7 @@ namespace ConsoleBot
                         }
                         else
                         {
-                            Client.SendTextMessageAsync(e.Message.Chat.Id, "Ви вже закінчили навчання ✅ \n Щоб пройти курс заново, оберіть команду /reset.");
+                            Client.SendTextMessageAsync(e.Message.Chat.Id, "Ви вже закінчили навчання ✅ \nЩоб пройти курс заново, оберіть команду /reset.");
                         }
                         break;
                     case "/showlectures":
